@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.4)  16 DEC 2025 22:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.4)  16 DEC 2025 22:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1264,8 +1264,16 @@ Underfull \vbox (badness 2073) has occurred while \output is active []
 
 
 
+[6.6]
+
+
+
+
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
+
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.8pt on input line 587.
+(Font)              scaled to size 8.8pt on input line 652.
 
 Overfull \hbox (4.18721pt too wide) has occurred while \output is active
  [][][][] 
@@ -1276,39 +1284,23 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [6.6]
-
-
-
-
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
-
-[7.7]
-
-LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (6 not 7).
-               Rerun to correct this.
-
+) [7.7]
 (./experiment_report.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `experiment_report.out' has not changed.
 (rerunfilecheck)             Checksum: EA6AABE3E0B7AD2E50E5AE08C3869B50;1322.
  ) 
 Here is how much of TeX's memory you used:
  21277 strings out of 473190
  344438 string characters out of 5715800
- 822630 words of memory out of 5000000
+ 819879 words of memory out of 5000000
  43586 multiletter control sequences out of 15000+600000
  723838 words of font info for 361 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,13n,131p,1014b,629s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,13n,131p,1014b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/libertine/LinBiolinumT
 .pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/libertine/LinBiolin
 umTB.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/libertine/LinBi
@@ -1317,7 +1309,7 @@ inLibertineT.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/liberti
 ne/LinLibertineTB.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/li
 bertine/LinLibertineTI.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/publ
 ic/newtx/txsys.pfb>
-Output written on experiment_report.pdf (7 pages, 440500 bytes).
+Output written on experiment_report.pdf (7 pages, 440490 bytes).
 PDF statistics:
  186 PDF objects out of 1000 (max. 8388607)
  155 compressed objects within 2 object streams
