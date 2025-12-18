@@ -2,6 +2,9 @@
 
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
 
 \AtBeginDocument{ \providecommand\BibTeX{ Bib\TeX } }
 \setcopyright{acmlicensed}
@@ -93,10 +96,10 @@ hospital bed becomes available again.
 
 \subsubsection{bu\_data\_mining\_success\_criteria>}
 The following Success Criteria were defined:
-1. Primary metric (average error in days): Mean Absolute Error (MAE) ≤ 3 days (baseline
+1. Primary metric (average error in days): Mean Absolute Error (MAE) smaller or equal to 3 days (baseline
 mean predictor expected error est.: 5–6 days).
 2. Secondary metrics: Root Mean Squared Error (RMSE) to penalize large errors and R²
-≥ 0.5 to measure explained variance.
+larger or equal to 0.5 to measure explained variance.
 3. Benchmarks: Compare against baseline (predicting mean or median LOS).
 4. Interpretability: Identify and explain the most important predictors of LOS (age,
 disease group, comorbidities).
@@ -125,7 +128,6 @@ feature importance, SHAP values) to build trust and ensure usability.
 Data Understanding
 
 
-
 This activity loads the SUPPORT2 clinical dataset from the CSV file "support2\_cf.csv" using a semicolon separator. 
 The file contains 9,105 patient records and 49 columns (clinical, demographic, outcome and cost variables) from the SUPPORT study (1989–1994).
 One Preprocessing step was applied before loading. The original support2.csv has column descriptions shifted one to the left. This was manueally adjusted. 
@@ -136,7 +138,9 @@ The resulting pandas DataFrame is stored as the entity :data and serves as input
 \subsubsection{attribute\_overview>}
 Data Understanding
 
+As part of the Data Understanding phase, an attribute overview table was generated from the raw SUPPORT2 dataset. The output lists all attributes together with their technical data type, semantic type, measurement unit, a semantic description and an indicator whether the attribute is potentially ethically sensitive.
 
+The overview provides a structure summary of the schema of the dataset and serves as a basis for subsequent data quality analysis and preprocessing decisions. It highlights the heterogeneous nature of the underlying data set and also, by marking ethically sensitive attributes, supports later bias and fairness assessments.
 
 For our task to predict the hospital length of stay (LOS), we have the target variable slos, 
 which represents the number of days from study entry to discharge.
@@ -199,7 +203,7 @@ In addition, hday and DNR values are inspected to identify counts of these varia
 
 
 \subsubsection{inspect\_statistical\_properties>}
-The statistical analysis shows that the target variable slos has a mean length of stay of approximately 18 days, with a median of 11 days and a very strong right skew (skewness ≈ 4.6).
+The statistical analysis shows that the target variable slos has a mean length of stay of approximately 18 days, with a median of 11 days and a very strong right skew (skewness about 4.6).
 While 75\% of patients are discharged within 20 days, the upper tail is long, with the 95th percentile at 55 days and a maximum of 343 days. 
 This indicates heterogeneity and extreme values (sort of outlier) in hospital stays and we should consider robust modeling approaches for improved predictability.
 
@@ -239,6 +243,10 @@ including cost-related variables and dnrday, which also exhibit severe informati
 
 
 \subsubsection{data\_quality\_analysis>}
+As part of the Data Understanding phase, a data quality analysis was conducted on the SUPPORT2 dataset to identify potential issues related to missing values, implausible data and extreme values.
+The generated outputs include a missing-value summary for all variables, reporting absolute counts and relative counts of missing observations. Moreover, an IQR-based outlier analysis for numerical variables was generated.
+Altogether, these outputs provide an overview of data completeness and sitributional extremes across all predictors and the target variable.
+
 The data quality analysis shows that all variables exhibit plausible value ranges without impossible or invalid entries, indicating good overall data validity. 
 As already observed in the statistical properties analysis, all categorical variables are unevenly distributed.
 
@@ -266,6 +274,8 @@ Outlier detection using an IQR-based approach identifies a considerable number o
 These values are clinically plausible and likely reflect disease severity rather than data errors. 
 Consequently, outliers are retained and handled implicitly through robust and non-linear modeling approaches instead of explicit removal.
 
+These findings directly motivate later preprocessing decisions in the Data Preparation phase.
+
 
 
 \subsubsection{inspect\_data\_quality>}
@@ -289,9 +299,23 @@ Data Understanding
 
 
 
-This activity performs visual exploration of the selected predictor set for LOS prediction at day 3. 
-We created Pearson and Spearman correlation heatmaps and bar plots (predictor–LOS), histograms for numeric predictors and LOS, frequency plots for categorical variables, and boxplots of LOS by categorical predictors (both uncapped and capped at the 99th percentile for more readability).
+This activity performs visual exploration of the selected predictor set for LOS prediction at day 3.
 
+We generated Pearson and Spearman correlation heatmaps, correlation bar plots between individual predictors and the target variable slos, histograms for numerical predictors and slos, frequency plots for categorical variables, and boxplots of slos stratified by categorical predictors (both uncapped and capped at the 99th percentile for improved readability).
+
+The correlation heatmaps show that linear associations between individual predictors and LOS are generally weak, indicating that no single variable dominates LOS prediction. In contrast, Spearman correlations are often higher than Pearson correlations, particularly for lab values (BUN and crea) indicating monotonic but non-linear relationships between predictors and LOS. This pattern supports the use of non-linear or robust modeling approaches.
+
+The correlation bar plots provide a ranked overview of predictor–LOS associations and highlight that severity scores, functional status measures, and selected physiological variables (temperature, heart rate) show stronger associations with LOS than demographic or socioeconomic variables. At the same time, the relatively small absolute correlation values emphasize that LOS is driven by the interaction of multiple factors rather than by individual predictors in isolation.
+
+Overall, the comparison of Pearson (linear relationships) and Spearman (monotonic/rank-based relationships) correlations show that LOS prediction is characterized by weak linear but stronger monotonic associations, motivating the use of non-linear modeling approaches.
+
+The histograms visually confirm the strong right-skewed distribution of slos, with most patients discharged within a relatively short time and a long tail of very long hospital stays. Similar skewness is observed for several physiological and laboratory variables, while others appear closer to symmetric distributions. These patterns motivate later log-transformations and feature scaling due to heterogeneous numeric ranges.
+
+The frequency/distribution plots of categorical variables show distribution imbalance across most attributes, including race, income, disease groups and DNR status. A small number of categories dominate the dataset, while several subgroups are represented rather poorly. This highlights potential bias and fairness risks.
+
+The Boxplots of slos by categorical predictors show systematic differences across disease categories. Capped boxplots improve interpretability by reducing the influence of extreme values while preserving relative differences between groups.
+
+Overall, the visual exploration confirms and extends the statistical findings by highlighting strong skewness, non-linear relationships, heterogeneous effects across disease groups, and substantial class imbalance. These insights directly inform subsequent preprocessing decisions (feature scaling, log-transformations, retention of clinically plausible extreme values) and reinforce the choice of modeling approaches capable of capturing non-linear and interaction effects.
 The plots confirm weak to moderate associations between individual predictors and LOS and show that rank-based (Spearman) correlations are often higher than Pearson correlations, supporting non-linear relationships. 
 The strongest monotonic associations with LOS are observed for severity/functional measures (aps, sps, adlp) and selected physiological variables, for example temperature and heart rate.
 Histograms visually confirm heavy right skew in LOS and several physiological variables, while others appear closer to symmetric/normal.
@@ -330,7 +354,7 @@ Dementia is present in only about 3\% of patients and diabetes in approximately 
 Income is unevenly distributed, with a large proportion of missing values (\textasciitilde{}33\%) and dominance of lower-income categories, while higher-income groups (>50k) are comparatively small.
 Certain disease classes and subgroups (e.g., coma, colon cancer, cirrhosis, MOSF with malignancy) also represent relatively small patient populations.
 
-Sex is moderately imbalanced (≈56\% male, 44\% female), while DNR status shows strong imbalance, with the majority of patients having no DNR order and much smaller groups with DNR before or after admission. 
+Sex is moderately imbalanced (about 56\% male, 44\% female), while DNR status shows strong imbalance, with the majority of patients having no DNR order and much smaller groups with DNR before or after admission. 
 These imbalances may introduce bias in learned relationships and reduce model reliability for underrepresented groups.
 
 Given these characteristics, the dataset poses risks of biased performance across demographic, socioeconomic, and clinical subgroups. 
@@ -467,6 +491,11 @@ Data Preparation
 
 
 
+Several laboratory variables showed strong right-skewed distributions in the data understanding phase. To reduce skewness and limit the influence of extreme values while preserving clinical meaning a monotonic value rescaling with an offset was applied to selected laboratory variables. The transformation was deliberately limited to laboratory measurements with clear clinical interpretation and pronounced right-skewness. Other skewed variables such as clinical scores or bounded functional scales were left unchanged to preserve their semantic meaning and interpretability.
+
+
+
+
 \subsubsection{one\_hot\_encoding>}
 Data Preparation
 
@@ -526,24 +555,6 @@ The scaler parameters (mean and standard deviation) were estimated exclusively f
 
 
 \subsubsection{alt\_preprocessing\_decisions>}
-We analyzed the potential for creating derived attributes in the SUPPORT2 dataset to assess whether additional features could meaningfully improve prediction of hospital LOS.
-
-The following types of derived attributes were considered related to appropriate knowledge of clinical medicine:
-
-1) Ratio variables: 
-For example, a BUN/creatinine ratio (urea-to-creatinine ratio) could be derived from the existing BUN and creatinine lab values. This ratio would measure the amount of urea nitrogen in the blood and helps to see how well the kidneys are functioning. This ratio is be clinically relevant, but not specifically for our case which is why it was not applied to our analysis.
-
-2) Combined organ dysfunction indicators: 
-A derived variable counting the number of failing organ systems could be calculated based on abnormal laboratory values (e.g., bilirubin, creatinine, pafi, pH). 
-This could provide a summary measure of overall illness severity, but was not implemented due to complexity and missing deep clinical domain-understanding which is why it was considered out of scope for this assignment.
-
-3) Normalized lab values: 
-Laboratory measurements could be normalized relative to patient characteristics such as age or sex.
-
-Although these derived attributes could potentially provide additional predictive signal, their applicability was evaluated in relation to our limited domain knowledge of clinical and medical data. 
-Given that the SUPPORT2 dataset already contains several high-level and clinically validated severity scores, the expected added value of additional derived attributes was considered low.
-
-Furthermore, creating clinically meaningful derived variables would require deeper medical expertise to ensure correct definitions, thresholds, and interpretations.
 
 
 
