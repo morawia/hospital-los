@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-01-11">
+    <creator>NetworkX 3.6.1</creator>
+  </meta>
+  <graph defaultedgetype="directed" mode="static" name="">
+    <nodes>
+      <node id="https://starvers.ec.tuwien.ac.at/BI2025/045/business_understanding" label="business_understanding" />
+      <node id="&lt;http://www.w3.org/ns/prov#Activity&gt;" label="prov#Activity&gt;" />
+      <node id="&quot;Business understanding&quot;@en" label="&quot;Business understanding&quot;@en" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/business_understanding_phase&gt;" label="business_understanding_phase&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bb6a40f9-9d92-4f9f-bbd2-b65ef6a82da2&gt;" label="bb6a40f9-9d92-4f9f-bbd2-b65ef6a82da2&gt;" />
+      <node id="&lt;http://www.w3.org/ns/prov#Association&gt;" label="prov#Association&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/stud-id_52110660&gt;" label="stud-id_52110660&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/code_executor&gt;" label="code_executor&gt;" />
+    </nodes>
+    <edges>
+      <edge source="https://starvers.ec.tuwien.ac.at/BI2025/045/business_understanding" target="&lt;http://www.w3.org/ns/prov#Activity&gt;" id="0" label="type&gt;" />
+      <edge source="https://starvers.ec.tuwien.ac.at/BI2025/045/business_understanding" target="&quot;Business understanding&quot;@en" id="1" label="label&gt;" />
+      <edge source="https://starvers.ec.tuwien.ac.at/BI2025/045/business_understanding" target="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/business_understanding_phase&gt;" id="2" label="isPartOf&gt;" />
+      <edge source="https://starvers.ec.tuwien.ac.at/BI2025/045/business_understanding" target="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bb6a40f9-9d92-4f9f-bbd2-b65ef6a82da2&gt;" id="3" label="qualifiedAssociation&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bb6a40f9-9d92-4f9f-bbd2-b65ef6a82da2&gt;" target="&lt;http://www.w3.org/ns/prov#Association&gt;" id="4" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bb6a40f9-9d92-4f9f-bbd2-b65ef6a82da2&gt;" target="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/stud-id_52110660&gt;" id="5" label="agent&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bb6a40f9-9d92-4f9f-bbd2-b65ef6a82da2&gt;" target="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/code_executor&gt;" id="6" label="hadRole&gt;" />
+    </edges>
+  </graph>
+</gexf>

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-01-11">
+    <creator>NetworkX 3.6.1</creator>
+  </meta>
+  <graph defaultedgetype="directed" mode="static" name="">
+    <nodes>
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/stud-id_52110660&gt;" label="stud-id_52110660&gt;" />
+      <node id="&lt;http://xmlns.com/foaf/0.1/Person&gt;" label="Person&gt;" />
+      <node id="&lt;http://www.w3.org/ns/prov#Agent&gt;" label="prov#Agent&gt;" />
+      <node id="&lt;http://purl.obolibrary.org/obo/IAO_0000578&gt;" label="IAO_0000578&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/stud-id_12119884&gt;" label="stud-id_12119884&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/code_writer&gt;" label="code_writer&gt;" />
+      <node id="&lt;http://www.w3.org/ns/prov#Role&gt;" label="prov#Role&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/code_executor&gt;" label="code_executor&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/business_understanding_phase&gt;" label="business_understanding_phase&gt;" />
+      <node id="&lt;http://www.w3.org/ns/prov#Activity&gt;" label="prov#Activity&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/business_understanding&gt;" label="business_understanding&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bb6a40f9-9d92-4f9f-bbd2-b65ef6a82da2&gt;" label="bb6a40f9-9d92-4f9f-bbd2-b65ef6a82da2&gt;" />
+      <node id="&lt;http://www.w3.org/ns/prov#Association&gt;" label="prov#Association&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_data_source_and_scenario&gt;" label="bu_data_source_and_scenario&gt;" />
+      <node id="&lt;http://www.w3.org/ns/prov#Entity&gt;" label="prov#Entity&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_business_objectives&gt;" label="bu_business_objectives&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_business_success_criteria&gt;" label="bu_business_success_criteria&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_data_mining_goals&gt;" label="bu_data_mining_goals&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_data_mining_success_criteria&gt;" label="bu_data_mining_success_criteria&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_ai_risk_aspects&gt;" label="bu_ai_risk_aspects&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/data_understanding_phase&gt;" label="data_understanding_phase&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/load_support2_data&gt;" label="load_support2_data&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/b8bac193-c4e6-4e31-9134-b23e001e279c&gt;" label="b8bac193-c4e6-4e31-9134-b23e001e279c&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/c600e15c-87a9-4e2a-be85-b6c2a3014210&gt;" label="c600e15c-87a9-4e2a-be85-b6c2a3014210&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/raw_data&gt;" label="raw_data&gt;" />
+      <node id="&lt;https://schema.org/Dataset&gt;" label="Dataset&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/raw_data_path&gt;" label="raw_data_path&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/data&gt;" label="data&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/support2_csv&gt;" label="support2_csv&gt;" />
+      <node id="&lt;http://mlcommons.org/croissant/FileObject&gt;" label="FileObject&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/raw_recordset&gt;" label="raw_recordset&gt;" />
+      <node id="&lt;http://mlcommons.org/croissant/RecordSet&gt;" label="RecordSet&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/field_slos&gt;" label="field_slos&gt;" />
+      <node id="&lt;http://mlcommons.org/croissant/Field&gt;" label="Field&gt;" />
+      <node id="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/field_aps&gt;" label="field_aps&gt;" />
+    </nodes>
+    <edges>
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/stud-id_52110660&gt;" target="&lt;http://xmlns.com/foaf/0.1/Person&gt;" id="0" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/stud-id_52110660&gt;" target="&lt;http://www.w3.org/ns/prov#Agent&gt;" id="1" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/stud-id_52110660&gt;" target="&lt;http://purl.obolibrary.org/obo/IAO_0000578&gt;" id="2" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/stud-id_12119884&gt;" target="&lt;http://xmlns.com/foaf/0.1/Person&gt;" id="3" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/stud-id_12119884&gt;" target="&lt;http://www.w3.org/ns/prov#Agent&gt;" id="4" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/stud-id_12119884&gt;" target="&lt;http://purl.obolibrary.org/obo/IAO_0000578&gt;" id="5" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/code_writer&gt;" target="&lt;http://www.w3.org/ns/prov#Role&gt;" id="6" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/code_executor&gt;" target="&lt;http://www.w3.org/ns/prov#Role&gt;" id="7" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/business_understanding_phase&gt;" target="&lt;http://www.w3.org/ns/prov#Activity&gt;" id="8" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/business_understanding&gt;" target="&lt;http://www.w3.org/ns/prov#Activity&gt;" id="9" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bb6a40f9-9d92-4f9f-bbd2-b65ef6a82da2&gt;" target="&lt;http://www.w3.org/ns/prov#Association&gt;" id="10" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_data_source_and_scenario&gt;" target="&lt;http://www.w3.org/ns/prov#Entity&gt;" id="11" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_business_objectives&gt;" target="&lt;http://www.w3.org/ns/prov#Entity&gt;" id="12" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_business_success_criteria&gt;" target="&lt;http://www.w3.org/ns/prov#Entity&gt;" id="13" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_data_mining_goals&gt;" target="&lt;http://www.w3.org/ns/prov#Entity&gt;" id="14" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_data_mining_success_criteria&gt;" target="&lt;http://www.w3.org/ns/prov#Entity&gt;" id="15" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/bu_ai_risk_aspects&gt;" target="&lt;http://www.w3.org/ns/prov#Entity&gt;" id="16" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/data_understanding_phase&gt;" target="&lt;http://www.w3.org/ns/prov#Activity&gt;" id="17" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/load_support2_data&gt;" target="&lt;http://www.w3.org/ns/prov#Activity&gt;" id="18" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/b8bac193-c4e6-4e31-9134-b23e001e279c&gt;" target="&lt;http://www.w3.org/ns/prov#Association&gt;" id="19" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/c600e15c-87a9-4e2a-be85-b6c2a3014210&gt;" target="&lt;http://www.w3.org/ns/prov#Association&gt;" id="20" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/raw_data&gt;" target="&lt;http://www.w3.org/ns/prov#Entity&gt;" id="21" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/raw_data&gt;" target="&lt;https://schema.org/Dataset&gt;" id="22" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/raw_data_path&gt;" target="&lt;http://www.w3.org/ns/prov#Entity&gt;" id="23" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/data&gt;" target="&lt;http://www.w3.org/ns/prov#Entity&gt;" id="24" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/data&gt;" target="&lt;https://schema.org/Dataset&gt;" id="25" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/support2_csv&gt;" target="&lt;http://mlcommons.org/croissant/FileObject&gt;" id="26" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/raw_recordset&gt;" target="&lt;http://mlcommons.org/croissant/RecordSet&gt;" id="27" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/field_slos&gt;" target="&lt;http://mlcommons.org/croissant/Field&gt;" id="28" label="type&gt;" />
+      <edge source="&lt;https://starvers.ec.tuwien.ac.at/BI2025/045/field_aps&gt;" target="&lt;http://mlcommons.org/croissant/Field&gt;" id="29" label="type&gt;" />
+    </edges>
+  </graph>
+</gexf>
